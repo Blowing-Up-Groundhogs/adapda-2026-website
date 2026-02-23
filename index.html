@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ADAPDA - Automatically Domain-Adapted and Personalized Document Analysis Workshop at ICDAR 2026">
+    <title>ADAPDA | ICDAR 2026 Workshop</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Icons (Phosphor Icons) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="gradient-text">ADAPDA 2026</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#topics">Topics</a></li>
+                <li><a href="#dates">Important Dates</a></li>
+                <li><a href="#submission">Submission</a></li>
+                <li><a href="#organizers">Organizers</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <i class="ph ph-list"></i>
+            </div>
+        </div>
+        <!-- Mobile Dropdown -->
+        <div class="mobile-nav">
+            <ul class="mobile-nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#topics">Topics</a></li>
+                <li><a href="#dates">Dates</a></li>
+                <li><a href="#submission">Submission</a></li>
+                <li><a href="#organizers">Organizers</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+        <div class="hero-bg-glow"></div>
+        <div class="hero-content fade-in-up">
+            <div class="badge">ICDAR 2026 Workshop</div>
+            <h1 class="hero-title">Automatically <span class="gradient-text">Domain-Adapted</span> and <span class="gradient-text">Personalized</span> Document Analysis</h1>
+            <p class="hero-subtitle">Exploring advanced strategies for adapting document analysis systems to sensitive, user-specific, and rapidly evolving domains.</p>
+            <div class="hero-meta">
+                <div class="meta-item">
+                    <i class="ph ph-calendar-blank"></i>
+                    <span>TBA, 2026 (Half-day)</span>
+                </div>
+                <div class="meta-item">
+                    <i class="ph ph-map-pin"></i>
+                    <span>TBA (with ICDAR 2026)</span>
+                </div>
+            </div>
+            <div class="hero-actions">
+                <a href="#submission" class="btn btn-primary">Call for Papers</a>
+                <a href="#topics" class="btn btn-secondary">Explore Topics</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- About Section -->
+        <section id="about" class="section about-section">
+            <div class="container section-header fade-in">
+                <h2>Scope and <span class="gradient-text">Motivation</span></h2>
+                <div class="divider"></div>
+            </div>
+            <div class="container about-content">
+                <div class="glass-card fade-in-up">
+                    <p>Document Analysis (DA) technologies are becoming increasingly pervasive in our daily lives due to the digitalization of documents (both in the cultural and industrial domains) and the widespread use of paper tablets, pads, and smartphones to take notes and sign documents. High-performing DA algorithms are needed that are able to deal with digitized documents from different writers, in different languages, and with different visual characteristics.</p>
+                    <p>As a result, modern DA systems must be able not only to generalize, but also to adapt efficiently to new domains and users, often under limited supervision or data availability. In this context, domain adaptation and automatic personalization play a central role in improving the robustness and usability of DA techniques.</p>
+                    <p>Recent advances in large pre-trained language and multimodal models enable new forms of lightweight domain adaptation of generic systems. Strategies such as prompt engineering, few-shot and in-context learning, structured output generation, and task-specific post-processing allow adapting these models to specific domains without full retraining.</p>
+                    <p>Furthermore, in contexts involving sensitive information, privacy-preserving solutions and lightweight adaptation strategies that can be performed onboard personal devices are crucial.</p>
+                    <div class="highlight-box mt-4">
+                        <i class="ph ph-lightbulb text-primary text-2xl"></i>
+                        <p>This workshop aims to gather expertise and novel ideas for personalized DA tasks, welcoming contributions on training and adaptation strategies of specialized models, generic Large Language Models (LLMs), and Large Multimodal Models (LMMs).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Topics Section -->
+        <section id="topics" class="section">
+            <div class="container section-header fade-in">
+                <h2>Workshop <span class="gradient-text">Topics</span></h2>
+                <div class="divider"></div>
+                <p class="section-subtitle">We call for submissions addressing, but not limited to, the following topics:</p>
+            </div>
+            <div class="container">
+                <div class="topics-grid">
+                    <div class="topic-card slide-up">
+                        <i class="ph ph-pen-nib text-primary"></i>
+                        <h3>Handwritten Text Recognition</h3>
+                        <p>Domain adaptation and personalization for both on-line and off-line HTR.</p>
+                    </div>
+                    <div class="topic-card slide-up" style="animation-delay: 0.1s;">
+                        <i class="ph ph-keyboard text-primary"></i>
+                        <h3>Handwritten Text Generation</h3>
+                        <p>Domain-adaptive generation of handwritten texts focusing on writer specifics.</p>
+                    </div>
+                    <div class="topic-card slide-up" style="animation-delay: 0.2s;">
+                        <i class="ph ph-files text-primary"></i>
+                        <h3>End-to-End Systems</h3>
+                        <p>Domain adaptation strategies for complete Document Analysis Systems.</p>
+                    </div>
+                    <div class="topic-card slide-up" style="animation-delay: 0.3s;">
+                        <i class="ph ph-text-t text-primary"></i>
+                        <h3>Specific Recognition</h3>
+                        <p>Domain-specific text, symbol, and layout recognition tasks.</p>
+                    </div>
+                    <div class="topic-card slide-up" style="animation-delay: 0.4s;">
+                        <i class="ph ph-devices text-primary"></i>
+                        <h3>Mobile & Interaction</h3>
+                        <p>Adaptation for Human–Document Interaction and Mobile Text Recognition.</p>
+                    </div>
+                    <div class="topic-card slide-up" style="animation-delay: 0.5s;">
+                        <i class="ph ph-shield-check text-primary"></i>
+                        <h3>Privacy-Preserving DA</h3>
+                        <p>Privacy-preserving domain adaptation of handwritten and document data.</p>
+                    </div>
+                    <div class="topic-card slide-up" style="animation-delay: 0.6s;">
+                        <i class="ph ph-users text-primary"></i>
+                        <h3>Specific Adaptation</h3>
+                        <p>Writer-, Language-, and Visual-specific adaptation of DA models.</p>
+                    </div>
+                    <div class="topic-card slide-up" style="animation-delay: 0.7s;">
+                        <i class="ph ph-brain text-primary"></i>
+                        <h3>LLMs & LMMs</h3>
+                        <p>Prompt-based, few-shot, and instruction-based adaptation of large models for DA.</p>
+                    </div>
+                    <div class="topic-card slide-up" style="animation-delay: 0.8s;">
+                        <i class="ph ph-chart-bar text-primary"></i>
+                        <h3>Benchmarks</h3>
+                        <p>Novel benchmarks and datasets for personalized and domain-adapted DA.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Important Dates Section -->
+        <section id="dates" class="section dates-section">
+            <div class="container section-header fade-in">
+                <h2>Important <span class="gradient-text">Dates</span></h2>
+                <div class="divider"></div>
+            </div>
+            <div class="container">
+                <div class="timeline">
+                    <div class="timeline-item slide-in-left">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-card">
+                            <div class="date-badge">May 29, 2026</div>
+                            <h3>Paper Submission Deadline</h3>
+                            <p>Anywhere on Earth (AoE)</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item slide-in-right">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-card">
+                            <div class="date-badge">June 20, 2026</div>
+                            <h3>Acceptance Notification</h3>
+                            <p>Decisions sent to authors</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item slide-in-left">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-card">
+                            <div class="date-badge">July 1, 2026</div>
+                            <h3>Camera-Ready Deadline</h3>
+                            <p>Anywhere on Earth (AoE) - Final LNCS source and PDF</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Submission Section -->
+        <section id="submission" class="section">
+            <div class="container section-header fade-in">
+                <h2>Paper <span class="gradient-text">Submission</span></h2>
+                <div class="divider"></div>
+            </div>
+            <div class="container submission-content">
+                <div class="submission-grid">
+                    <div class="glass-card format-card fade-in-up">
+                        <i class="ph ph-file-pdf text-3xl text-primary mb-4"></i>
+                        <h3>Format & Guidelines</h3>
+                        <ul class="guidelines-list">
+                            <li><i class="ph ph-check-circle text-primary"></i> Springer Lecture Notes in Computer Science (LNCS) format.</li>
+                            <li><i class="ph ph-check-circle text-primary"></i> Short papers: 2-8 pages (including figures and references).</li>
+                            <li><i class="ph ph-check-circle text-primary"></i> Long papers: 8-17 pages (including figures and references).</li>
+                            <li><i class="ph ph-check-circle text-primary"></i> Double-blind review process. Do not include names, affiliations, or acknowledgements.</li>
+                            <li><i class="ph ph-check-circle text-primary"></i> Camera-ready files: Springer prepares proceedings from LaTeX source files, not only PDFs.</li>
+                        </ul>
+                    </div>
+                    <div class="glass-card platform-card fade-in-up" style="animation-delay: 0.2s;">
+                        <i class="ph ph-upload-simple text-3xl text-primary mb-4"></i>
+                        <h3>Submission Platform</h3>
+                        <p class="mb-6">We use the Microsoft CMT Platform for managing submissions and peer reviews.</p>
+                        <a href="https://cmt3.research.microsoft.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary w-full text-center">
+                            Go to CMT System <i class="ph ph-arrow-right ml-2"></i>
+                        </a>
+                        <p class="text-sm mt-4 text-gray-400">Long papers will be included in the main ICDAR workshop proceedings volume. All accepted papers will be presented orally.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Organizers Section -->
+        <section id="organizers" class="section pb-24">
+            <div class="container section-header fade-in">
+                <h2>Organizing <span class="gradient-text">Committee</span></h2>
+                <div class="divider"></div>
+            </div>
+            <div class="container">
+                <div class="organizers-grid">
+                    <!-- Organizer 1 -->
+                    <div class="organizer-card glass-card slide-up">
+                        <h3>Silvia Cascianelli</h3>
+                        <p class="org-affiliation">University of Modena and Reggio Emilia</p>
+                        <div class="org-links">
+                            <a href="mailto:silvia.cascianelli@unimore.it"><i class="ph ph-envelope"></i></a>
+                            <a href="https://silviacascianelli.com" target="_blank"><i class="ph ph-globe"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Organizer 2 -->
+                    <div class="organizer-card glass-card slide-up" style="animation-delay: 0.1s;">
+                        <h3>Christopher Kermorvant</h3>
+                        <p class="org-affiliation">TEKLIA</p>
+                        <div class="org-links">
+                            <a href="mailto:kermorvant@teklia.com"><i class="ph ph-envelope"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Organizer 3 -->
+                    <div class="organizer-card glass-card slide-up" style="animation-delay: 0.2s;">
+                        <h3>Eric Anquetil</h3>
+                        <p class="org-affiliation">Institut National des Sciences Appliquées de Rennes</p>
+                        <div class="org-links">
+                            <a href="mailto:eric.anquetil@irisa.fr"><i class="ph ph-envelope"></i></a>
+                            <a href="https://people.irisa.fr/Eric.Anquetil" target="_blank"><i class="ph ph-globe"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Organizer 4 -->
+                    <div class="organizer-card glass-card slide-up" style="animation-delay: 0.3s;">
+                        <h3>Vittorio Pippi</h3>
+                        <p class="org-affiliation">PPXR</p>
+                        <div class="org-links">
+                            <a href="mailto:vittorio@vpippi.com"><i class="ph ph-envelope"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Organizer 5 -->
+                    <div class="organizer-card glass-card slide-up" style="animation-delay: 0.4s;">
+                        <h3>Fabio Quattrini</h3>
+                        <p class="org-affiliation">University of Modena and Reggio Emilia</p>
+                        <div class="org-links">
+                            <a href="mailto:fabio.quattrini@unimore.it"><i class="ph ph-envelope"></i></a>
+                            <a href="https://fabioquattrini.com" target="_blank"><i class="ph ph-globe"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Organizer 6 -->
+                    <div class="organizer-card glass-card slide-up" style="animation-delay: 0.5s;">
+                        <h3>Carmine Zaccagnino</h3>
+                        <p class="org-affiliation">University of Modena and Reggio Emilia</p>
+                        <div class="org-links">
+                            <a href="mailto:carmine.zaccagnino@unimore.it"><i class="ph ph-envelope"></i></a>
+                            <a href="https://github.com/carzacc" target="_blank"><i class="ph ph-github-logo"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <span class="gradient-text font-bold text-xl">ADAPDA 2026</span>
+                <p>Third Edition of the Workshop on Automatically Domain-Adapted and Personalized Document Analysis</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ADAPDA Workshop. Hosted at <a href="https://adapda.silviacascianelli.com" class="text-primary hover:underline">adapda.silviacascianelli.com</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
