@@ -33,6 +33,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-links a');
     
     window.addEventListener('scroll', () => {
+        // Update scroll progress bar
+        const scrollProgressBar = document.getElementById('scroll-progress');
+        if (scrollProgressBar) {
+            const scrolled = window.scrollY;
+            const total = document.documentElement.scrollHeight - window.innerHeight;
+            scrollProgressBar.style.width = total > 0 ? `${(scrolled / total) * 100}%` : '0%';
+        }
+
         // Sticky Navbar Effect
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
@@ -84,4 +92,23 @@ document.addEventListener('DOMContentLoaded', () => {
         // Fallback for older browsers
         animatedElements.forEach(el => el.classList.add('visible'));
     }
+
+    // Countdown to paper submission deadline (May 29, 2026 AoE)
+    function updateCountdown() {
+        const deadline = new Date('2026-05-30T11:59:59Z'); // May 29 AoE = May 30 UTC
+        const now = new Date();
+        const diff = deadline - now;
+        const countdownEl = document.getElementById('countdown-days');
+        if (countdownEl) {
+            if (diff > 0) {
+                const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+                countdownEl.textContent = days;
+            } else {
+                const banner = countdownEl.closest('.countdown-banner');
+                if (banner) banner.style.display = 'none';
+            }
+        }
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 60000);
 });

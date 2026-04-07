@@ -18,6 +18,9 @@
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
+
     <!-- Navigation -->
     <nav id="navbar" class="navbar">
         <div class="nav-container">
@@ -31,6 +34,7 @@
                 <li><a href="#submission">Submission</a></li>
                 <li><a href="#organizers">Organizers</a></li>
             </ul>
+            <a href="#submission" class="btn-nav-cta">Submit Paper</a>
             <div class="mobile-menu-btn">
                 <i class="ph ph-list"></i>
             </div>
@@ -69,6 +73,10 @@
                 <a href="#topics" class="btn btn-secondary">Explore Topics</a>
             </div>
         </div>
+        <a href="#about" class="scroll-indicator">
+            <span>Scroll</span>
+            <i class="ph ph-caret-double-down"></i>
+        </a>
     </header>
 
     <!-- Main Content -->
@@ -119,7 +127,7 @@
                     </div>
                     <div class="topic-card slide-up" style="animation-delay: 0.3s;">
                         <i class="ph ph-text-t text-primary"></i>
-                        <h3>Specific Recognition</h3>
+                        <h3>Domain-Specific Recognition</h3>
                         <p>Domain-specific text, symbol, and layout recognition tasks.</p>
                     </div>
                     <div class="topic-card slide-up" style="animation-delay: 0.4s;">
@@ -134,7 +142,7 @@
                     </div>
                     <div class="topic-card slide-up" style="animation-delay: 0.6s;">
                         <i class="ph ph-users text-primary"></i>
-                        <h3>Specific Adaptation</h3>
+                        <h3>Writer & Language Adaptation</h3>
                         <p>Writer-, Language-, and Visual-specific adaptation of DA models.</p>
                     </div>
                     <div class="topic-card slide-up" style="animation-delay: 0.7s;">
@@ -158,6 +166,12 @@
                 <div class="divider"></div>
             </div>
             <div class="container">
+                <div class="countdown-banner fade-in">
+                    <i class="ph ph-clock-countdown" style="color: var(--primary); font-size: 1.2rem; flex-shrink: 0;"></i>
+                    <span class="countdown-label">Days until paper submission deadline:</span>
+                    <span class="countdown-days" id="countdown-days">--</span>
+                    <span class="countdown-label">days remaining</span>
+                </div>
                 <div class="timeline">
                     <div class="timeline-item slide-in-left">
                         <div class="timeline-dot"></div>
@@ -230,6 +244,7 @@
                 <div class="organizers-grid">
                     <!-- Organizer 1 -->
                     <div class="organizer-card glass-card slide-up">
+                        <div class="org-avatar">SC</div>
                         <h3>Silvia Cascianelli</h3>
                         <p class="org-affiliation">University of Modena and Reggio Emilia</p>
                         <div class="org-links">
@@ -240,6 +255,7 @@
                     
                     <!-- Organizer 2 -->
                     <div class="organizer-card glass-card slide-up" style="animation-delay: 0.1s;">
+                        <div class="org-avatar">CK</div>
                         <h3>Christopher Kermorvant</h3>
                         <p class="org-affiliation">TEKLIA</p>
                         <div class="org-links">
@@ -249,6 +265,7 @@
                     
                     <!-- Organizer 3 -->
                     <div class="organizer-card glass-card slide-up" style="animation-delay: 0.2s;">
+                        <div class="org-avatar">EA</div>
                         <h3>Eric Anquetil</h3>
                         <p class="org-affiliation">Institut National des Sciences Appliquées de Rennes</p>
                         <div class="org-links">
@@ -259,6 +276,7 @@
                     
                     <!-- Organizer 4 -->
                     <div class="organizer-card glass-card slide-up" style="animation-delay: 0.3s;">
+                        <div class="org-avatar">VP</div>
                         <h3>Vittorio Pippi</h3>
                         <p class="org-affiliation">PPXR</p>
                         <div class="org-links">
@@ -268,6 +286,7 @@
                     
                     <!-- Organizer 5 -->
                     <div class="organizer-card glass-card slide-up" style="animation-delay: 0.4s;">
+                        <div class="org-avatar">FQ</div>
                         <h3>Fabio Quattrini</h3>
                         <p class="org-affiliation">University of Modena and Reggio Emilia</p>
                         <div class="org-links">
@@ -278,6 +297,7 @@
                     
                     <!-- Organizer 6 -->
                     <div class="organizer-card glass-card slide-up" style="animation-delay: 0.5s;">
+                        <div class="org-avatar">CZ</div>
                         <h3>Carmine Zaccagnino</h3>
                         <p class="org-affiliation">University of Modena and Reggio Emilia</p>
                         <div class="org-links">
