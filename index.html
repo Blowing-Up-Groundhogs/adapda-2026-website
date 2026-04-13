@@ -1,23 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="ADAPDA - Automatically Domain-Adapted and Personalized Document Analysis Workshop at ICDAR 2026">
     <title>ADAPDA | ICDAR 2026 Workshop</title>
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
-    
+
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
-    
+
     <!-- Icons (Phosphor Icons) -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
+
     <!-- Navigation -->
     <nav id="navbar" class="navbar">
         <div class="nav-container">
@@ -31,8 +32,13 @@
                 <li><a href="#submission">Submission</a></li>
                 <li><a href="#organizers">Organizers</a></li>
             </ul>
-            <div class="mobile-menu-btn">
-                <i class="ph ph-list"></i>
+            <div class="nav-right">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light theme">
+                    <i class="ph ph-sun" id="themeIcon"></i>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Open menu">
+                    <i class="ph ph-list"></i>
+                </button>
             </div>
         </div>
         <!-- Mobile Dropdown -->
@@ -50,29 +56,112 @@
     <!-- Hero Section -->
     <header class="hero" id="home">
         <div class="hero-bg-glow"></div>
-        <div class="hero-content fade-in-up">
-            <div class="badge">ICDAR 2026 Workshop</div>
-            <h1 class="hero-title">Automatically <span class="gradient-text">Domain-Adapted</span> and <span class="gradient-text">Personalized</span> Document Analysis</h1>
-            <p class="hero-subtitle">Exploring advanced strategies for adapting document analysis systems to sensitive, user-specific, and rapidly evolving domains.</p>
-            <div class="hero-meta">
-                <div class="meta-item">
-                    <i class="ph ph-calendar-blank"></i>
-                    <span>September 3 or 4, 2026 (Half-day)</span>
+        <div class="hero-wrapper">
+            <!-- Left: text content -->
+            <div class="hero-content fade-in-up">
+                <div class="badge">
+                    <i class="ph ph-graduation-cap"></i>
+                    ICDAR 2026 Workshop
                 </div>
-                <div class="meta-item">
-                    <i class="ph ph-map-pin"></i>
-                    <span>Vienna, Austria (with ICDAR 2026)</span>
+                <h1 class="hero-title">
+                    Automatically <span class="gradient-text">Domain-Adapted</span>
+                    and <span class="gradient-text">Personalized</span>
+                    Document Analysis
+                </h1>
+                <p class="hero-subtitle">
+                    Exploring advanced strategies for adapting document analysis systems
+                    to sensitive, user-specific, and rapidly evolving domains.
+                </p>
+                <div class="hero-meta">
+                    <div class="meta-item">
+                        <i class="ph ph-calendar-blank"></i>
+                        <span>September 3 or 4, 2026 (Half-day)</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="ph ph-map-pin"></i>
+                        <span>Vienna, Austria &mdash; ICDAR 2026</span>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <a href="#submission" class="btn btn-primary">
+                        <i class="ph ph-paper-plane-right"></i>
+                        Call for Papers
+                    </a>
+                    <a href="#topics" class="btn btn-secondary">
+                        <i class="ph ph-compass"></i>
+                        Explore Topics
+                    </a>
                 </div>
             </div>
-            <div class="hero-actions">
-                <a href="#submission" class="btn btn-primary">Call for Papers</a>
-                <a href="#topics" class="btn btn-secondary">Explore Topics</a>
+
+            <!-- Right: Vienna visual -->
+            <div class="hero-visual fade-in">
+                <div class="hero-image-frame">
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Elektrotechnisches_Institut_761_in_A-1040_Wien.jpg"
+                        alt="TU Wien Campus Gußhaus – Faculty of Electrical Engineering and IT, Gußhausstraße 27-29, Vienna"
+                        class="hero-img"
+                        onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/7/7d/Elektrotechnischesinstituttuwien.jpg'; this.onerror=function(){this.style.display='none'; this.parentElement.classList.add('no-image');}"
+                    >
+                    <div class="hero-img-overlay"></div>
+                    <div class="hero-img-badge">
+                        <i class="ph ph-map-pin"></i>
+                        Vienna, Austria 2026
+                    </div>
+                    <div class="hero-img-accent hero-img-accent-1"></div>
+                    <div class="hero-img-accent hero-img-accent-2"></div>
+                </div>
+                <!-- Floating edition badge -->
+                <div class="hero-edition-badge">
+                    <span class="edition-number">3rd</span>
+                    <span class="edition-label">Edition</span>
+                </div>
             </div>
         </div>
     </header>
 
+    <!-- Stats Strip -->
+    <div class="stats-strip">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <i class="ph ph-trophy text-primary"></i>
+                    <div>
+                        <span class="stat-value">3rd</span>
+                        <span class="stat-label">Workshop Edition</span>
+                    </div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <i class="ph ph-book-open text-primary"></i>
+                    <div>
+                        <span class="stat-value">LNCS</span>
+                        <span class="stat-label">Springer Proceedings</span>
+                    </div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <i class="ph ph-map-pin text-primary"></i>
+                    <div>
+                        <span class="stat-value">Vienna</span>
+                        <span class="stat-label">Austria</span>
+                    </div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <i class="ph ph-clock text-primary"></i>
+                    <div>
+                        <span class="stat-value">Sep 2026</span>
+                        <span class="stat-label">Half-day Workshop</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Main Content -->
     <main>
+
         <!-- About Section -->
         <section id="about" class="section about-section">
             <div class="container section-header fade-in">
@@ -103,47 +192,47 @@
             <div class="container">
                 <div class="topics-grid">
                     <div class="topic-card slide-up">
-                        <i class="ph ph-pen-nib text-primary"></i>
+                        <div class="topic-icon-wrap"><i class="ph ph-pen-nib"></i></div>
                         <h3>Handwritten Text Recognition</h3>
                         <p>Domain adaptation and personalization for both on-line and off-line HTR.</p>
                     </div>
-                    <div class="topic-card slide-up" style="animation-delay: 0.1s;">
-                        <i class="ph ph-keyboard text-primary"></i>
+                    <div class="topic-card slide-up" style="animation-delay: 0.08s;">
+                        <div class="topic-icon-wrap"><i class="ph ph-pencil-line"></i></div>
                         <h3>Handwritten Text Generation</h3>
                         <p>Domain-adaptive generation of handwritten texts focusing on writer specifics.</p>
                     </div>
-                    <div class="topic-card slide-up" style="animation-delay: 0.2s;">
-                        <i class="ph ph-files text-primary"></i>
+                    <div class="topic-card slide-up" style="animation-delay: 0.16s;">
+                        <div class="topic-icon-wrap"><i class="ph ph-files"></i></div>
                         <h3>End-to-End Systems</h3>
                         <p>Domain adaptation strategies for complete Document Analysis Systems.</p>
                     </div>
-                    <div class="topic-card slide-up" style="animation-delay: 0.3s;">
-                        <i class="ph ph-text-t text-primary"></i>
+                    <div class="topic-card slide-up" style="animation-delay: 0.24s;">
+                        <div class="topic-icon-wrap"><i class="ph ph-text-aa"></i></div>
                         <h3>Specific Recognition</h3>
                         <p>Domain-specific text, symbol, and layout recognition tasks.</p>
                     </div>
-                    <div class="topic-card slide-up" style="animation-delay: 0.4s;">
-                        <i class="ph ph-devices text-primary"></i>
-                        <h3>Mobile & Interaction</h3>
-                        <p>Adaptation for Human–Document Interaction and Mobile Text Recognition.</p>
+                    <div class="topic-card slide-up" style="animation-delay: 0.32s;">
+                        <div class="topic-icon-wrap"><i class="ph ph-device-mobile"></i></div>
+                        <h3>Mobile &amp; Interaction</h3>
+                        <p>Adaptation for Human&ndash;Document Interaction and Mobile Text Recognition.</p>
                     </div>
-                    <div class="topic-card slide-up" style="animation-delay: 0.5s;">
-                        <i class="ph ph-shield-check text-primary"></i>
+                    <div class="topic-card slide-up" style="animation-delay: 0.40s;">
+                        <div class="topic-icon-wrap"><i class="ph ph-shield-check"></i></div>
                         <h3>Privacy-Preserving DA</h3>
                         <p>Privacy-preserving domain adaptation of handwritten and document data.</p>
                     </div>
-                    <div class="topic-card slide-up" style="animation-delay: 0.6s;">
-                        <i class="ph ph-users text-primary"></i>
+                    <div class="topic-card slide-up" style="animation-delay: 0.48s;">
+                        <div class="topic-icon-wrap"><i class="ph ph-users-three"></i></div>
                         <h3>Specific Adaptation</h3>
                         <p>Writer-, Language-, and Visual-specific adaptation of DA models.</p>
                     </div>
-                    <div class="topic-card slide-up" style="animation-delay: 0.7s;">
-                        <i class="ph ph-brain text-primary"></i>
-                        <h3>LLMs & LMMs</h3>
+                    <div class="topic-card slide-up" style="animation-delay: 0.56s;">
+                        <div class="topic-icon-wrap"><i class="ph ph-robot"></i></div>
+                        <h3>LLMs &amp; LMMs</h3>
                         <p>Prompt-based, few-shot, and instruction-based adaptation of large models for DA.</p>
                     </div>
-                    <div class="topic-card slide-up" style="animation-delay: 0.8s;">
-                        <i class="ph ph-chart-bar text-primary"></i>
+                    <div class="topic-card slide-up" style="animation-delay: 0.64s;">
+                        <div class="topic-icon-wrap"><i class="ph ph-chart-bar"></i></div>
                         <h3>Benchmarks</h3>
                         <p>Novel benchmarks and datasets for personalized and domain-adapted DA.</p>
                     </div>
@@ -160,7 +249,7 @@
             <div class="container">
                 <div class="timeline">
                     <div class="timeline-item slide-in-left">
-                        <div class="timeline-dot"></div>
+                        <div class="timeline-dot"><i class="ph ph-calendar-check"></i></div>
                         <div class="timeline-content glass-card">
                             <div class="date-badge">May 29, 2026</div>
                             <h3>Paper Submission Deadline</h3>
@@ -168,7 +257,7 @@
                         </div>
                     </div>
                     <div class="timeline-item slide-in-right">
-                        <div class="timeline-dot"></div>
+                        <div class="timeline-dot"><i class="ph ph-envelope-open"></i></div>
                         <div class="timeline-content glass-card">
                             <div class="date-badge">June 20, 2026</div>
                             <h3>Acceptance Notification</h3>
@@ -176,11 +265,11 @@
                         </div>
                     </div>
                     <div class="timeline-item slide-in-left">
-                        <div class="timeline-dot"></div>
+                        <div class="timeline-dot"><i class="ph ph-check-fat"></i></div>
                         <div class="timeline-content glass-card">
                             <div class="date-badge">June 27, 2026</div>
                             <h3>Camera-Ready Deadline</h3>
-                            <p>Anywhere on Earth (AoE) - Final LNCS source and PDF</p>
+                            <p>Anywhere on Earth (AoE) &mdash; Final LNCS source and PDF</p>
                         </div>
                     </div>
                 </div>
@@ -196,19 +285,23 @@
             <div class="container submission-content">
                 <div class="submission-grid">
                     <div class="glass-card format-card fade-in-up">
-                        <i class="ph ph-file-pdf text-3xl text-primary mb-4"></i>
-                        <h3>Format & Guidelines</h3>
+                        <div class="card-icon-header">
+                            <i class="ph ph-file-pdf"></i>
+                            <h3>Format &amp; Guidelines</h3>
+                        </div>
                         <ul class="guidelines-list">
                             <li><i class="ph ph-check-circle text-primary"></i> Springer Lecture Notes in Computer Science (LNCS) format.</li>
-                            <li><i class="ph ph-check-circle text-primary"></i> Short papers: 2-8 pages (including figures and references).</li>
-                            <li><i class="ph ph-check-circle text-primary"></i> Long papers: 8-17 pages (including figures and references).</li>
+                            <li><i class="ph ph-check-circle text-primary"></i> Short papers: 2&ndash;8 pages (including figures and references).</li>
+                            <li><i class="ph ph-check-circle text-primary"></i> Long papers: 8&ndash;17 pages (including figures and references).</li>
                             <li><i class="ph ph-check-circle text-primary"></i> Double-blind review process. Do not include names, affiliations, or acknowledgements.</li>
                             <li><i class="ph ph-check-circle text-primary"></i> Camera-ready files: Springer prepares proceedings from LaTeX source files, not only PDFs.</li>
                         </ul>
                     </div>
                     <div class="glass-card platform-card fade-in-up" style="animation-delay: 0.2s;">
-                        <i class="ph ph-upload-simple text-3xl text-primary mb-4"></i>
-                        <h3>Submission Platform</h3>
+                        <div class="card-icon-header">
+                            <i class="ph ph-upload-simple"></i>
+                            <h3>Submission Platform</h3>
+                        </div>
                         <p class="mb-6">We use the Microsoft CMT Platform for managing submissions and peer reviews.</p>
                         <a href="https://cmt3.research.microsoft.com/ADAPDA2026/Submission/Index" target="_blank" rel="noopener noreferrer" class="btn btn-primary w-full text-center">
                             Go to CMT System <i class="ph ph-arrow-right ml-2"></i>
@@ -228,66 +321,81 @@
             </div>
             <div class="container">
                 <div class="organizers-grid">
-                    <!-- Organizer 1 -->
+
                     <div class="organizer-card glass-card slide-up">
+                        <div class="org-avatar">
+                            <img src="https://ui-avatars.com/api/?name=Silvia+Cascianelli&size=128&background=8B5CF6&color=fff&bold=true" alt="Silvia Cascianelli">
+                        </div>
                         <h3>Silvia Cascianelli</h3>
                         <p class="org-affiliation">University of Modena and Reggio Emilia</p>
                         <div class="org-links">
-                            <a href="mailto:silvia.cascianelli@unimore.it"><i class="ph ph-envelope"></i></a>
-                            <a href="https://silviacascianelli.com" target="_blank"><i class="ph ph-globe"></i></a>
+                            <a href="mailto:silvia.cascianelli@unimore.it" title="Email"><i class="ph ph-envelope"></i></a>
+                            <a href="https://silviacascianelli.com" target="_blank" title="Website"><i class="ph ph-globe"></i></a>
                         </div>
                     </div>
-                    
-                    <!-- Organizer 2 -->
+
                     <div class="organizer-card glass-card slide-up" style="animation-delay: 0.1s;">
+                        <div class="org-avatar">
+                            <img src="https://ui-avatars.com/api/?name=Christopher+Kermorvant&size=128&background=3B82F6&color=fff&bold=true" alt="Christopher Kermorvant">
+                        </div>
                         <h3>Christopher Kermorvant</h3>
                         <p class="org-affiliation">TEKLIA</p>
                         <div class="org-links">
-                            <a href="mailto:kermorvant@teklia.com"><i class="ph ph-envelope"></i></a>
+                            <a href="mailto:kermorvant@teklia.com" title="Email"><i class="ph ph-envelope"></i></a>
                         </div>
                     </div>
-                    
-                    <!-- Organizer 3 -->
+
                     <div class="organizer-card glass-card slide-up" style="animation-delay: 0.2s;">
+                        <div class="org-avatar">
+                            <img src="https://ui-avatars.com/api/?name=Eric+Anquetil&size=128&background=10B981&color=fff&bold=true" alt="Eric Anquetil">
+                        </div>
                         <h3>Eric Anquetil</h3>
                         <p class="org-affiliation">Institut National des Sciences Appliquées de Rennes</p>
                         <div class="org-links">
-                            <a href="mailto:eric.anquetil@irisa.fr"><i class="ph ph-envelope"></i></a>
-                            <a href="https://people.irisa.fr/Eric.Anquetil" target="_blank"><i class="ph ph-globe"></i></a>
+                            <a href="mailto:eric.anquetil@irisa.fr" title="Email"><i class="ph ph-envelope"></i></a>
+                            <a href="https://people.irisa.fr/Eric.Anquetil" target="_blank" title="Website"><i class="ph ph-globe"></i></a>
                         </div>
                     </div>
-                    
-                    <!-- Organizer 4 -->
+
                     <div class="organizer-card glass-card slide-up" style="animation-delay: 0.3s;">
+                        <div class="org-avatar">
+                            <img src="https://ui-avatars.com/api/?name=Vittorio+Pippi&size=128&background=F59E0B&color=fff&bold=true" alt="Vittorio Pippi">
+                        </div>
                         <h3>Vittorio Pippi</h3>
                         <p class="org-affiliation">PPXR</p>
                         <div class="org-links">
-                            <a href="mailto:vittorio@vpippi.com"><i class="ph ph-envelope"></i></a>
+                            <a href="mailto:vittorio@vpippi.com" title="Email"><i class="ph ph-envelope"></i></a>
                         </div>
                     </div>
-                    
-                    <!-- Organizer 5 -->
+
                     <div class="organizer-card glass-card slide-up" style="animation-delay: 0.4s;">
+                        <div class="org-avatar">
+                            <img src="https://ui-avatars.com/api/?name=Fabio+Quattrini&size=128&background=EC4899&color=fff&bold=true" alt="Fabio Quattrini">
+                        </div>
                         <h3>Fabio Quattrini</h3>
                         <p class="org-affiliation">University of Modena and Reggio Emilia</p>
                         <div class="org-links">
-                            <a href="mailto:fabio.quattrini@unimore.it"><i class="ph ph-envelope"></i></a>
-                            <a href="https://fabioquattrini.com" target="_blank"><i class="ph ph-globe"></i></a>
+                            <a href="mailto:fabio.quattrini@unimore.it" title="Email"><i class="ph ph-envelope"></i></a>
+                            <a href="https://fabioquattrini.com" target="_blank" title="Website"><i class="ph ph-globe"></i></a>
                         </div>
                     </div>
-                    
-                    <!-- Organizer 6 -->
+
                     <div class="organizer-card glass-card slide-up" style="animation-delay: 0.5s;">
+                        <div class="org-avatar">
+                            <img src="https://ui-avatars.com/api/?name=Carmine+Zaccagnino&size=128&background=6366F1&color=fff&bold=true" alt="Carmine Zaccagnino">
+                        </div>
                         <h3>Carmine Zaccagnino</h3>
                         <p class="org-affiliation">University of Modena and Reggio Emilia</p>
                         <div class="org-links">
-                            <a href="mailto:carmine.zaccagnino@unimore.it"><i class="ph ph-envelope"></i></a>
-                            <a href="https://github.com/carzacc" target="_blank"><i class="ph ph-github-logo"></i></a>
+                            <a href="mailto:carmine.zaccagnino@unimore.it" title="Email"><i class="ph ph-envelope"></i></a>
+                            <a href="https://github.com/carzacc" target="_blank" title="GitHub"><i class="ph ph-github-logo"></i></a>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
+
     </main>
 
     <!-- Footer -->
@@ -295,10 +403,17 @@
         <div class="container footer-content">
             <div class="footer-brand">
                 <span class="gradient-text font-bold text-xl">ADAPDA 2026</span>
-                <p>Third Edition of the Workshop on Automatically Domain-Adapted and Personalized Document Analysis</p>
+                <p>Third Edition of the Workshop on Automatically Domain-Adapted<br>and Personalized Document Analysis &mdash; ICDAR 2026, Vienna</p>
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#topics">Topics</a>
+                    <a href="#dates">Dates</a>
+                    <a href="#submission">Submission</a>
+                    <a href="#organizers">Organizers</a>
+                </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 ADAPDA Workshop. Hosted at <a href="https://adapda.silviacascianelli.com" class="text-primary hover:underline">adapda.silviacascianelli.com</a></p>
+                <p>&copy; 2026 ADAPDA Workshop &mdash; Hosted at <a href="https://adapda.silviacascianelli.com">adapda.silviacascianelli.com</a></p>
             </div>
         </div>
     </footer>

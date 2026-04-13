@@ -1,10 +1,37 @@
-// ADAPDA 2026 Website Interactivity
+// ADAPDA 2026 Website — Interactivity & Theme Toggle
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Mobile Menu Toggle
+
+    // ─── 0. Dark / Light Theme Toggle ────────────────────────────────────────
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon   = document.getElementById('themeIcon');
+    const htmlEl      = document.documentElement;
+
+    // Restore saved preference, default to dark
+    const savedTheme = localStorage.getItem('adapda-theme') || 'dark';
+    htmlEl.setAttribute('data-theme', savedTheme);
+    setThemeIcon(savedTheme);
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const current = htmlEl.getAttribute('data-theme');
+            const next    = current === 'dark' ? 'light' : 'dark';
+            htmlEl.setAttribute('data-theme', next);
+            localStorage.setItem('adapda-theme', next);
+            setThemeIcon(next);
+        });
+    }
+
+    function setThemeIcon(theme) {
+        if (!themeIcon) return;
+        // In dark mode show sun (switch to light); in light mode show moon (switch to dark)
+        themeIcon.className = theme === 'dark' ? 'ph ph-sun' : 'ph ph-moon';
+    }
+
+    // ─── 1. Mobile Menu Toggle ───────────────────────────────────────────────
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const mobileNav = document.querySelector('.mobile-nav');
-    
+    const mobileNav     = document.querySelector('.mobile-nav');
+
     if (mobileMenuBtn && mobileNav) {
         mobileMenuBtn.addEventListener('click', () => {
             mobileNav.classList.toggle('active');
@@ -18,70 +45,57 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Close mobile menu when a link is clicked
-    const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
-    mobileLinks.forEach(link => {
+    document.querySelectorAll('.mobile-nav-links a').forEach(link => {
         link.addEventListener('click', () => {
             mobileNav.classList.remove('active');
-            const icon = mobileMenuBtn.querySelector('i');
+            const icon = mobileMenuBtn && mobileMenuBtn.querySelector('i');
             if (icon) icon.classList.replace('ph-x', 'ph-list');
         });
     });
 
-    // 2. Sticky Navbar & Active States
-    const navbar = document.getElementById('navbar');
+    // ─── 2. Sticky Navbar & Active Nav Link ──────────────────────────────────
+    const navbar   = document.getElementById('navbar');
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-links a');
-    
-    window.addEventListener('scroll', () => {
-        // Sticky Navbar Effect
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
 
-        // Active State Update
+    window.addEventListener('scroll', () => {
+        // Scrolled state
+        navbar.classList.toggle('scrolled', window.scrollY > 50);
+
+        // Active section highlight
         let current = '';
         sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (scrollY >= (sectionTop - 200)) {
+            if (window.scrollY >= section.offsetTop - 200) {
                 current = section.getAttribute('id');
             }
         });
 
         navLinks.forEach(link => {
-            link.classList.remove('text-primary'); // Custom active class if desired
+            link.classList.remove('text-primary');
             if (link.getAttribute('href') === `#${current}`) {
                 link.classList.add('text-primary');
             }
         });
     });
 
-    // 3. Scroll Animations using Intersection Observer
-    const animatedElements = document.querySelectorAll('.fade-in, .fade-in-up, .slide-up, .slide-in-left, .slide-in-right');
-    
-    // Check if IntersectionObserver is supported
-    if ('IntersectionObserver' in window) {
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.15 // Trigger when 15% of the element is visible
-        };
+    // ─── 3. Scroll-triggered Animations (IntersectionObserver) ───────────────
+    const animated = document.querySelectorAll(
+        '.fade-in, .fade-in-up, .slide-up, .slide-in-left, .slide-in-right'
+    );
 
-        const observer = new IntersectionObserver((entries, observer) => {
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries, obs) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    // Stop observing once animated
-                    observer.unobserve(entry.target);
+                    obs.unobserve(entry.target);
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.12 });
 
-        animatedElements.forEach(el => observer.observe(el));
+        animated.forEach(el => observer.observe(el));
     } else {
-        // Fallback for older browsers
-        animatedElements.forEach(el => el.classList.add('visible'));
+        // Fallback: show all immediately
+        animated.forEach(el => el.classList.add('visible'));
     }
 });
