@@ -492,6 +492,46 @@ h1, h2, h3, h4, h5, h6 {
     flex-wrap: wrap;
 }
 
+.hero-deadline {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.hero-deadline i {
+    color: var(--primary);
+}
+
+.hero-deadline strong {
+    color: var(--text-primary);
+}
+
+.deadline-banner {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(139, 92, 246, 0.12);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    border-radius: var(--radius-md);
+    padding: 0.6rem 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.deadline-banner i {
+    color: var(--primary);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.deadline-banner strong {
+    color: var(--text-primary);
+}
+
 /* Hero image frame */
 .hero-image-frame {
     position: relative;
