@@ -532,6 +532,20 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text-primary);
 }
 
+.deadline-extended {
+    display: inline-block;
+    font-size: 0.7em;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--primary);
+    border: 1px solid currentColor;
+    border-radius: 3px;
+    padding: 0.05em 0.35em;
+    vertical-align: middle;
+    opacity: 0.8;
+}
+
 /* Hero image frame */
 .hero-image-frame {
     position: relative;
