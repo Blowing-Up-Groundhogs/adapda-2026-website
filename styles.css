@@ -917,7 +917,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .schedule-item {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 1.5rem;
     padding: 1rem 1.5rem;
     border-radius: var(--radius-md);
@@ -928,13 +928,30 @@ h1, h2, h3, h4, h5, h6 {
 .schedule-time {
     flex-shrink: 0;
     width: 4.5rem;
+    padding-top: 0.15rem;
     font-family: var(--font-heading);
     font-weight: 700;
     color: var(--secondary);
 }
 
+.schedule-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
 .schedule-title {
     color: var(--text-main);
+}
+
+.schedule-authors {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.schedule-authors strong {
+    color: var(--text-main);
+    font-weight: 600;
 }
 
 .schedule-break {
