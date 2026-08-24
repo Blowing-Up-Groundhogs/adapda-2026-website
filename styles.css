@@ -905,6 +905,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Schedule section */
+.schedule-note {
+    max-width: 760px;
+    margin: 0 auto 1rem;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+.schedule-note strong {
+    color: var(--text-main);
+    font-weight: 600;
+}
+
 .schedule-list {
     list-style: none;
     max-width: 760px;
